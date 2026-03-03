@@ -1,5 +1,5 @@
 // routes/userRoutes.js
-const { getUsers, addUser } = require("../controllers/userController");
+const { getUsers, postUser, putUser, deleteUser } = require("../controllers/userController");
 
 function userRoutes(req, res) {
 
@@ -11,7 +11,11 @@ function userRoutes(req, res) {
     }
 
     if (req.url  === "/users" && req.method === "POST") {
-        addUser(req, res);
+        postUser(req, res);
+        return true;
+    }
+    if (req.url  === "/users" && req.method === "PUT") {
+        putUser(req, res);
         return true;
     }
     if (req.url === "/users" && req.method === "DELETE") {

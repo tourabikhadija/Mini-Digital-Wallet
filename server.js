@@ -1,5 +1,6 @@
 const http = require("http");
-const userRoutes = require("./routes/userRoutes"); // userRoutes هنا function
+
+const userRoutes = require("./routes/userRoutes"); 
 
 const server = http.createServer((req, res) => {
     const handled = userRoutes(req, res);
